@@ -15,7 +15,7 @@ public class Base {
    
 	public void openBrowser() throws IOException {
 		// TODO Auto-generated method stub
-		try{String browser=util.readData("browser");
+		try{String browser=util.readDatafrompropertiesfile("browser");
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 		WebDriverManager.chromedriver().setup();
@@ -30,7 +30,7 @@ public class Base {
 		{
 		System.out.println("Please provide a proper browser value..");
 		}
-		String url=util.readData("URL");
+		String url=util.readDatafrompropertiesfile("URL");
         driver.get(url);
         driver.manage().window().maximize();
 		} 

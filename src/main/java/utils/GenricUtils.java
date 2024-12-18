@@ -16,7 +16,7 @@ public class GenricUtils {
 
     static WebDriver driver;
 	
-	public String readData(String value) throws IOException{
+	public String readDatafrompropertiesfile(String value) throws IOException{
 		FileReader reader= new FileReader(System.getProperty("user.dir")+"\\src\\main\\resources\\Config\\config.properties");
 		Properties properties = new Properties();
 		properties.load(reader);

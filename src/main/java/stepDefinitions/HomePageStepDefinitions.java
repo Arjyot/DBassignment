@@ -25,8 +25,8 @@ public class HomePageStepDefinitions {
     }
 
     @Then("validate the header data{string}{string}{string}{string}{string}{string}{string}{string}")
-    public void validate_the_header_data_live_scores(String data1, String data2, String data3, String data4, String data5, String data6, String data7,String data8) {
-     homePage.validateHeaderData(data1, data2, data3, data4, data5, data6, data7, data8);
+    public void validate_the_header_data_live_scores(String header1, String header2, String header3, String header4, String header5, String header6, String header7,String header8) {
+     homePage.validateHeaderData(header1, header2, header3, header4, header5, header6, header7, header8);;
      Base.closeBrowser();
     }
 

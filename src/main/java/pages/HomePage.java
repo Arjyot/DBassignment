@@ -17,28 +17,28 @@ public class HomePage extends Base {
 	private WebElement espnLogo;
 
 	@FindBy( xpath = "//a[contains(text(),'Live Scores')]")
-	private WebElement liveScore;
+	private WebElement liveScoreLink;
 	
     @FindBy( xpath = "//a[contains(text(),'Series')]")
-	private WebElement series;
+	private WebElement seriesLink;
     
     @FindBy( xpath = "//a[contains(text(),'Teams')]")
-	private WebElement teams;
+	private WebElement teamsLink;
     
     @FindBy( xpath = "//a[contains(text(),'News')]")
-	private WebElement news;
+	private WebElement newsLink;
 	
     @FindBy( xpath = "//a[contains(text(),'Features')]")
-	private WebElement features;
+	private WebElement featuresLink;
     
     @FindBy( xpath = "//a[contains(text(),'Videos')]")
-	private WebElement videos;
+	private WebElement videosLink;
     
     @FindBy( xpath = "//a[contains(text(),'Stats')]")
-	private WebElement stats;
+	private WebElement statsLink;
     
     @FindBy( xpath = "//div[contains(text(),'Edition IN')]")
-	private WebElement editionIN;
+	private WebElement editionINLink;
     
     @FindBy( xpath = "//i[@class='icon-wb_sunny-filled ds-text-icon-inverse']")
 	private WebElement sunnyModeIcon;
@@ -72,25 +72,35 @@ public class HomePage extends Base {
 		Assert.assertEquals(driver.getTitle(), title);
 	}
 	
-	public void validateHeaderData(String data1, String data2, String data3, String data4, String data5, String data6, String data7,String data8) {
+	public void validateHeaderData(String header1, String header2, String header3, String header4, String header5, String header6, String header7,String header8) {
 		
-		if(liveScore.getText().equalsIgnoreCase(data1) && series.getText().equalsIgnoreCase(data2) &&
-				teams.getText().equalsIgnoreCase(data3) && news.getText().equalsIgnoreCase(data4)&&
-				features.getText().equalsIgnoreCase(data5) &&videos.getText().equalsIgnoreCase(data6) 
-				&& stats.getText().equalsIgnoreCase(data7)&& editionIN.getText().equalsIgnoreCase(data8) 
-				&& darkModeIcon.isDisplayed() && notificationsIcon.isDisplayed()&& translateIcon.isDisplayed() 
-				&& appsIcon.isDisplayed() && searchIcon.isDisplayed() )
+		if(liveScoreLink.getText().equalsIgnoreCase(header1) && seriesLink.getText().equalsIgnoreCase(header2) &&
+				teamsLink.getText().equalsIgnoreCase(header3) && newsLink.getText().equalsIgnoreCase(header4)&&
+				featuresLink.getText().equalsIgnoreCase(header5) &&videosLink.getText().equalsIgnoreCase(header6) 
+				&& statsLink.getText().equalsIgnoreCase(header7)&& editionINLink.getText().equalsIgnoreCase(header8) 
+				 )
 		{
 			Assert.assertTrue("Hearder text and icons are verifed", true);;
 			
 		}
+		
 		else {
 			Assert.fail("Hearder text and icons are missing form header");
+		}
+		
+		if(darkModeIcon.isDisplayed() && notificationsIcon.isDisplayed()&& translateIcon.isDisplayed() 
+				&& appsIcon.isDisplayed() && searchIcon.isDisplayed()) {
+			
+	     Assert.assertTrue("icons are verifed", true);;
+			
+		}
+		
+		else {
+			Assert.fail("icons are missing form header");
 		}
 		}
 	
 	public void sunnyMode() {
-		
 		if(darkModeIcon.isDisplayed()) {
 			Assert.assertTrue("sunny mode is on", true);
 		}
