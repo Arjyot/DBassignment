@@ -80,12 +80,12 @@ public class HomePage extends Base {
 				&& statsLink.getText().equalsIgnoreCase(header7)&& editionINLink.getText().equalsIgnoreCase(header8) 
 				 )
 		{
-			Assert.assertTrue("Hearder text and icons are verifed", true);;
+			Assert.assertTrue("Hearder text are verifed", true);;
 			
 		}
 		
 		else {
-			Assert.fail("Hearder text and icons are missing form header");
+			Assert.fail("Hearder text are missing form header");
 		}
 		
 		if(darkModeIcon.isDisplayed() && notificationsIcon.isDisplayed()&& translateIcon.isDisplayed() 
